@@ -1,4 +1,6 @@
 import {Component} from 'react';
+import PropTypes from 'prop-types';
+
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import MarvelService from '../../services/MarvelService';
@@ -22,20 +24,21 @@ class CharList extends Component {
 		this.marvelService.getAllCharacters()
 			.then(this.onCharListLoadedAtStart)
 			.catch(this.onError)
-}
-
-onCharListLoadedAtStart = (charList) => {
-	this.setState({
-		charList,
-		loading: false
-	})
-}
+	}
 
 	componentWillUnmount() {
 		this.setState(({offset}) => ({
 			offset: offset + 9}))
-		
 	}
+
+	onCharListLoadedAtStart = (charList) => {
+		this.setState({
+			charList,
+			loading: false
+		})
+	}
+
+
 
 	onRequest = (offset) => {
 		this.onCharListLoading();
@@ -125,6 +128,10 @@ onCharListLoadedAtStart = (charList) => {
 			</div>
 		)
 	}
+}
+
+CharList.propTypes = {
+	onCharSelected: PropTypes.func.isRequired// Перевірка чи onCharSelected є функцією. Вимагана
 }
 
 export default CharList;

@@ -1,9 +1,11 @@
 import { Component } from "react";
+import PropTypes from 'prop-types';
+
+import MarvelService from '../../services/MarvelService';
 import Spinner from "../spinner/Spinner";
 import ErrorMessage from "../errorMessage/ErrorMessage";
 import Skeleton from '../skeleton/Skeleton';
 import './charInfo.scss';
-import MarvelService from '../../services/MarvelService';
 
 class CharInfo extends Component {
 	
@@ -123,6 +125,10 @@ const View = ({char}) => {
 				</ul>
 		</>
 	)
+}
+
+CharInfo.propTypes = {
+	charId: PropTypes.number// Перевірка чи charId є числом
 }
 
 export default CharInfo;
