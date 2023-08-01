@@ -20,25 +20,8 @@ class CharList extends Component {
 	marvelService = new MarvelService();
 
 	componentDidMount() {
-		//this.onRequest();
-		this.marvelService.getAllCharacters()
-			.then(this.onCharListLoadedAtStart)
-			.catch(this.onError)
+		this.onRequest();
 	}
-
-	componentWillUnmount() {
-		this.setState(({offset}) => ({
-			offset: offset + 9}))
-	}
-
-	onCharListLoadedAtStart = (charList) => {
-		this.setState({
-			charList,
-			loading: false
-		})
-	}
-
-
 
 	onRequest = (offset) => {
 		this.onCharListLoading();
@@ -75,8 +58,6 @@ class CharList extends Component {
 		})
 	}
 
-	//------------------------------------------------------
-
 	itemRefs = [];
 
 	setRef = (ref) => {
@@ -84,11 +65,17 @@ class CharList extends Component {
 	}
 
 	focusOnItem = (id) => {
+		// Я реализовал вариант чуть сложнее, и с классом и с фокусом
+		// Но в теории можно оставить только фокус, и его в стилях использовать вместо класса
+		// На самом деле, решение с css-классом можно сделать, вынеся персонажа
+		// в отдельный компонент. Но кода будет больше, появится новое состояние
+		// и не факт, что мы выиграем по оптимизации за счет бОльшего кол-ва элементов
+
+		// По возможности, не злоупотребляйте рефами, только в крайних случаях
 		this.itemRefs.forEach(item => item.classList.remove('char__item_selected'));
 		this.itemRefs[id].classList.add('char__item_selected');
 		this.itemRefs[id].focus();
 	}
-
 
 	// Этот метод создан для оптимизации, 
 	// чтобы не помещать такую конструкцию в метод render
@@ -131,7 +118,7 @@ class CharList extends Component {
 	render() {
 
 		const {charList, loading, error, offset, newItemLoading, charEnded} = this.state;
-				
+		
 		const items = this.renderItems(charList);
 
 		const errorMessage = error ? <ErrorMessage/> : null;
@@ -156,8 +143,7 @@ class CharList extends Component {
 }
 
 CharList.propTypes = {
-	onCharSelected: PropTypes.func.isRequired // Перевірка чи onCharSelected є функцією. Вимагана
+	onCharSelected: PropTypes.func.isRequired
 }
 
 export default CharList;
-
