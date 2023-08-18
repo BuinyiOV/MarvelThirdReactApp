@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MarvelThirdReactApp/static/css/main.3c679471.css",
-    "main.js": "/MarvelThirdReactApp/static/js/main.66f6e4a3.js",
+    "main.js": "/MarvelThirdReactApp/static/js/main.6a80da7a.js",
     "static/css/968.599a7276.chunk.css": "/MarvelThirdReactApp/static/css/968.599a7276.chunk.css",
     "static/js/968.d0d60ff9.chunk.js": "/MarvelThirdReactApp/static/js/968.d0d60ff9.chunk.js",
     "static/css/425.009126bc.chunk.css": "/MarvelThirdReactApp/static/css/425.009126bc.chunk.css",
@@ -22,7 +22,7 @@
     "static/media/Avengers_logo.png": "/MarvelThirdReactApp/static/media/Avengers_logo.9eaf219344d83362e830.png",
     "index.html": "/MarvelThirdReactApp/index.html",
     "main.3c679471.css.map": "/MarvelThirdReactApp/static/css/main.3c679471.css.map",
-    "main.66f6e4a3.js.map": "/MarvelThirdReactApp/static/js/main.66f6e4a3.js.map",
+    "main.6a80da7a.js.map": "/MarvelThirdReactApp/static/js/main.6a80da7a.js.map",
     "968.599a7276.chunk.css.map": "/MarvelThirdReactApp/static/css/968.599a7276.chunk.css.map",
     "968.d0d60ff9.chunk.js.map": "/MarvelThirdReactApp/static/js/968.d0d60ff9.chunk.js.map",
     "425.009126bc.chunk.css.map": "/MarvelThirdReactApp/static/css/425.009126bc.chunk.css.map",
@@ -39,6 +39,6 @@
   },
   "entrypoints": [
     "static/css/main.3c679471.css",
-    "static/js/main.66f6e4a3.js"
+    "static/js/main.6a80da7a.js"
   ]
 }
