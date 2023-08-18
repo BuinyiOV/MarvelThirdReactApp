@@ -23,10 +23,9 @@ const App = () => {
 					<Suspense fallback={<Spinner/>}>
 						<Routes>
 							<Route path="/" element={<MainPage/>}/>
-							<Route path="https://buinyiov.github.io/MarvelThirdReactApp/" element={<MainPage/>}/>
-							<Route path="https://buinyiov.github.io/MarvelThirdReactApp" element={<MainPage/>}/>
-							<Route path="https://buinyiov.github.io" element={<MainPage/>}/>
-							<Route path="buinyiov.github.io/MarvelThirdReactApp/" element={<MainPage/>}/>
+							<Route path="/MarvelThirdReactApp/" element={<MainPage/>}/>
+							<Route path="MarvelThirdReactApp" element={<MainPage/>}/>
+							<Route path="MarvelThirdReactApp/" element={<MainPage/>}/>
 							<Route path="/comics" element={<ComicsPage/>}/>
 							<Route path="/comics/:id" element={<SinglePage Component={SingleComicLayout} dataType='comic'/>}/>
 							<Route path="/characters/:id" element={<SinglePage Component={SingleCharacterLayout} dataType='character'/>}/>
